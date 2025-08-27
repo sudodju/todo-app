@@ -5,6 +5,7 @@ go 1.23.9
 replace go1f => ./
 
 require (
+	github.com/golang-jwt/jwt/v5 v5.3.0
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/stretchr/testify v1.10.0
 	go1f v0.0.0
