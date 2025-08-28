@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    image: todo:local
+    container_name: todo
+    ports:
+      - "7540:7540"
+    environment:
+      # путь к файлу БД внутри контейнера
+      - TODO_DBFILE=/db/scheduler.db
+      - TODO_PASSWORD= # задать при необходимости
+      - TODO_PORT=7540
+    volumes:
+      # том БД, для сохранения задач в случае удаления контейнера
+      - todo_db:/db
+    restart: unless-stopped
+
+volumes:
+  todo_db:
+    driver: local
