@@ -6,8 +6,6 @@ import (
 	"github.com/sudodju/go_final_project/pkg/db"
 )
 
-const searchBarDateFormat = "02.01.2006"
-
 type TasksResp struct {
 	Tasks []*db.Task `json:"tasks"`
 }
